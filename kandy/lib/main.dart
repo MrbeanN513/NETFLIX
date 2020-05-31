@@ -7,7 +7,7 @@ import 'package:kandy/page/ENGLISH.dart';
 import 'package:kandy/login/services/authentication.dart';
 import 'package:kandy/page/HINDI_DUBBED.dart';
 import 'package:kandy/page/SOUTH.dart';
-import 'package:kandy/page/others.dart';
+
 
 import 'homescreen/splashscreen.dart';
 import 'login/pages/root_page.dart';
@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
             BOLLYWOOD(),
             SOUTH(),
             BANGLA(),
-            OTHERS(),
+           
 
             Scaffold(
                 backgroundColor: Colors.black,
