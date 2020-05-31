@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:kandy/TV/tvshow.dart';
 import 'package:kandy/details/tvdetails.dart';
 import 'package:kandy/homescreen/Drawer.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 import 'dart:async';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -35,7 +35,8 @@ class _HINDI_DUBBEDpageState extends State<HINDI_DUBBEDpage> {
   Future _data;
   Future getHINDI_DUBBED() async {
     var firestore = Firestore.instance;
-    QuerySnapshot gh = await firestore.collection('HINDI_DUBBED').getDocuments();
+    QuerySnapshot gh =
+        await firestore.collection('HINDI_DUBBED').getDocuments();
     return gh.documents;
   }
 
@@ -113,95 +114,193 @@ class _HINDI_DUBBEDpageState extends State<HINDI_DUBBEDpage> {
                                     padding: const EdgeInsets.all(0.0),
                                     child: Row(
                                       children: <Widget>[
-                                        SizedBox(
+                                        Container(
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width /
-                                              50,
-                                        ),
-                                        InkWell(
-                                          onTap: () => launch(
-                                              snapshot.data[index].data['aa']),
-                                          child: Container(
-                                            child: Image.network(
-                                              snapshot.data[index].data['a'],
+                                              4,
+                                          child: InkWell(
+                                            onTap: () => launch(snapshot
+                                                .data[index].data['aa']),
+                                            child: CachedNetworkImage(
                                               fit: BoxFit.fill,
+                                              imageUrl: snapshot
+                                                  .data[index].data['a'],
+                                              imageBuilder:
+                                                  (context, imageProvider) =>
+                                                      Padding(
+                                                padding:
+                                                    const EdgeInsets.all(5.0),
+                                                child: Container(
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      4,
+                                                  decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                      image: imageProvider,
+                                                      fit: BoxFit.fill,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              placeholder: (context, url) =>
+                                                  Center(
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      new AlwaysStoppedAnimation<
+                                                              Color>(
+                                                          Colors
+                                                              .redAccent[700]),
+                                                ),
+                                              ),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Icon(Icons.error),
                                             ),
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                4.5,
-                                            color: Colors.red,
                                           ),
                                         ),
-                                        SizedBox(
+                                        Container(
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width /
-                                              50,
-                                        ),
-                                        InkWell(
-                                          onTap: () => launch(
-                                              snapshot.data[index].data['bb']),
-                                          child: Container(
-                                            child: Image.network(
-                                              snapshot.data[index].data['b'],
+                                              4,
+                                          child: InkWell(
+                                            onTap: () => launch(snapshot
+                                                .data[index].data['bb']),
+                                            child: CachedNetworkImage(
                                               fit: BoxFit.fill,
+                                              imageUrl: snapshot
+                                                  .data[index].data['b'],
+                                              imageBuilder:
+                                                  (context, imageProvider) =>
+                                                      Padding(
+                                                padding:
+                                                    const EdgeInsets.all(5.0),
+                                                child: Container(
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      4,
+                                                  decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                      image: imageProvider,
+                                                      fit: BoxFit.fill,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              placeholder: (context, url) =>
+                                                  Center(
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      new AlwaysStoppedAnimation<
+                                                              Color>(
+                                                          Colors
+                                                              .redAccent[700]),
+                                                ),
+                                              ),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Icon(Icons.error),
                                             ),
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                4.5,
-                                            color: Colors.red,
                                           ),
                                         ),
-                                        SizedBox(
+                                        Container(
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width /
-                                              50,
-                                        ),
-                                        InkWell(
-                                          onTap: () => launch(
-                                              snapshot.data[index].data['cc']),
-                                          child: Container(
-                                            child: Image.network(
-                                              snapshot.data[index].data['c'],
+                                              4,
+                                          child: InkWell(
+                                            onTap: () => launch(snapshot
+                                                .data[index].data['cc']),
+                                            child: CachedNetworkImage(
                                               fit: BoxFit.fill,
+                                              imageUrl: snapshot
+                                                  .data[index].data['c'],
+                                              imageBuilder:
+                                                  (context, imageProvider) =>
+                                                      Padding(
+                                                padding:
+                                                    const EdgeInsets.all(5.0),
+                                                child: Container(
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      4.5,
+                                                  decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                      image: imageProvider,
+                                                      fit: BoxFit.fill,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              placeholder: (context, url) =>
+                                                  Center(
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      new AlwaysStoppedAnimation<
+                                                              Color>(
+                                                          Colors
+                                                              .redAccent[700]),
+                                                ),
+                                              ),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Icon(Icons.error),
                                             ),
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                4.5,
-                                            color: Colors.red,
                                           ),
                                         ),
-                                        SizedBox(
+                                        Container(
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width /
-                                              50,
-                                        ),
-                                        InkWell(
-                                          onTap: () => launch(
-                                              snapshot.data[index].data['dd']),
-                                          child: Container(
-                                            child: Image.network(
-                                              snapshot.data[index].data['d'],
+                                              4,
+                                          child: InkWell(
+                                            onTap: () => launch(snapshot
+                                                .data[index].data['dd']),
+                                            child: CachedNetworkImage(
                                               fit: BoxFit.fill,
+                                              imageUrl: snapshot
+                                                  .data[index].data['d'],
+                                              imageBuilder:
+                                                  (context, imageProvider) =>
+                                                      Padding(
+                                                padding:
+                                                    const EdgeInsets.all(5.0),
+                                                child: Container(
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      4.5,
+                                                  decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                      image: imageProvider,
+                                                      fit: BoxFit.fill,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              placeholder: (context, url) =>
+                                                  Center(
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      new AlwaysStoppedAnimation<
+                                                              Color>(
+                                                          Colors
+                                                              .redAccent[700]),
+                                                ),
+                                              ),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Icon(Icons.error),
                                             ),
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                4.5,
-                                            color: Colors.red,
                                           ),
-                                        ),
-                                        SizedBox(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              50,
                                         ),
                                       ],
                                     ),
