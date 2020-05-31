@@ -53,7 +53,7 @@ class _TvshowState extends State<Tvshow> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox.expand(
-        child: PageView(
+        child: PageView(physics:new NeverScrollableScrollPhysics(),
           controller: _pageController,
           onPageChanged: (index) {
             setState(() => _currentIndex = index);
